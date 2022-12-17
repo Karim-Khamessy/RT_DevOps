@@ -16,7 +16,7 @@ stages {
       SCANNER_HOME = tool 'Sonar-scanner'
     }
     steps {
-    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'Sonar') {
+    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar') {
          sh '''$SCANNER_HOME/bin/sonar-scanner \
          -Dsonar.projectKey=spring \
          -Dsonar.sources=src/'''
