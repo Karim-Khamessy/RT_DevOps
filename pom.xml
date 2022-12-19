@@ -9,13 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bezkoder</groupId>
-	<artifactId>spring-boot-rest-controller-unit-test</artifactId>
+	<artifactId>spring-boot-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-rest-controller-unit-test</name>
+	<name>spring-boot-rest</name>
 	<description>Spring Boot test Rest Controller with @WebMvcTest</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<property name="sonar.java.binaries" value="target"/>
 	</properties>
 	<dependencies>
 		<dependency>
