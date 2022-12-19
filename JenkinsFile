@@ -20,13 +20,13 @@ stages {
         //  sh '''$SCANNER_HOME/bin/sonar-scanner \
         //  -Dsonar.projectKey=spring \
         //  -Dsonar.sources=src/'''
-        sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+        sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.projectKey=spring"'
        }
      }
 }
    stage('SQuality Gate') {
      steps {
-       timeout(time: 5, unit: 'HOURS') {
+       timeout(time: 5, unit: 'MINUTES') {
        waitForQualityGate abortPipeline: true
        }
   }
