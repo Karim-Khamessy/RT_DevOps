@@ -43,7 +43,7 @@ stage('Pushing to nexus'){
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "devops"
         // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "jenkins"
+        NEXUS_CREDENTIAL_ID = "nexus_user"
     }
   steps{
      script {
