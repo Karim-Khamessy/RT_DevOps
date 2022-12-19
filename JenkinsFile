@@ -11,6 +11,16 @@ stages {
       sh '''mvn install'''
     }
   }
+  stage('Test') {
+    steps {
+        sh 'mvn test'
+    }
+    post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+        }
+    }
+  }
   stage('SonarQube analysis') {
     environment {
       SCANNER_HOME = tool 'Sonar-scanner'
@@ -25,12 +35,12 @@ stages {
        }
      }
 }
-   stage('SQuality Gate') {
-     steps {
-       timeout(time: 1, unit: 'MINUTES') {
-       waitForQualityGate abortPipeline: false
-       }
-  }
-}
+//    stage('SQuality Gate') {
+//      steps {
+//        timeout(time: 1, unit: 'MINUTES') {
+//        waitForQualityGate abortPipeline: false
+//        }
+//   }
+// }
 }
 }
