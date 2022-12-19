@@ -20,7 +20,7 @@ stages {
         //  sh '''$SCANNER_HOME/bin/sonar-scanner \
         //  -Dsonar.projectKey=spring \
         //  -Dsonar.sources=src/'''
-        echo 'SonarQube analysis'
+        echo 'SonarQube analysiiis'
         sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
        }
      }
